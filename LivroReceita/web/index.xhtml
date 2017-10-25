@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Receitas</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+        <style type="text/css">
+            /*Estilo proprio para modificação bootstrap*/
+            body{
+                margin:30px;
+            }
+            .btn-danger{
+                margin-left: 5px;
+            }
+            .btn-success{
+                margin-left: 5px;
+            }
+            .btn{
+                margin-top: 5px
+            }
+            .form-control{
+                border-radius: 0px;
+            }
+            .margem-superior{
+                margin-top:20px;
+            }
+            .margem-lateral{
+                margin-left: 20px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+        <div clas="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h2 class="text-center">Cadastro de Receitas</h2>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 margem-superior">
+                        <h5>Dados:</h5>
+                        <hr/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <label>Nome</label>
+                        <h:inputText id="txtNome" class="form-control" value="#{receitaMb.receita.nome}"/>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <label>Tipo</label>
+                        <h:selectOneMenu class="form-control" value="#{receitaMb.receita.ingredientes}">
+                            <f:selectItem itemValue="1" itemLabel="Doce"/>
+                            <f:selectItem itemValue="2" itemLabel="Salgado"/>
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <label>Modo De Preparo</label>
+                        <h:inputTextarea id="txtModoPreparo" rows="5" class="form-control" value="#{receitaMb.receita.modoPreparo}"/>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <label>Observações</label>
+                        <h:inputTextarea id="txtObservacoes" rows="5" class="form-control" value="#{receitaMb.receita.observacoes}"/>
+                    </div>
+                </div>
+                <div class="row margem-superior">
+                    <div class="col-sm-12">
+                        <h4>Listagem de ingredientes:<button type="button" id="btnAdicionarIngrediente" class="btn btn-sm btn-success margem-lateral" data-toggle="modal" data-target="#modalCadastraIngrediente">Adicionar Ingrediente</button></h4>
+                        <hr/>
+                    </div>
+                    <div class="col-sm-12" >
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                        <h:commandButton id="btnVoltarListaReceitas" class="btn btn-primary" value="Voltar Listagem" />
+                        <h:commandButton id="btnAdicionarReceita" class="btn btn-success" value="Salvar Receita" />
+                    </div>
+                </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalCadastraIngrediente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar Ingrediente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="container">
+                    <div class="row">
+                      <label>Nome / Descrição</label>
+                      <h:inputTextarea id="txtDescricaoIngrediente" class="form-control" rows="5"/>
+                    </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success">Salvar Ingrediente</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        </h:form>
+    </h:body>
+</html>
+

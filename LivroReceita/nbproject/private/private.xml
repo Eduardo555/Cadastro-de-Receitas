@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/comp8/Documentos/LivroReceita/src/java/aplicacao/IngredienteControlador.java</file>
-            <file>file:/home/comp8/Documentos/LivroReceita/web/index.xhtml</file>
-            <file>file:/home/comp8/Documentos/LivroReceita/src/java/aplicacao/ReceitaControlador.java</file>
-            <file>file:/home/comp8/Documentos/LivroReceita/src/java/beans/receitaMb.java</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/Ingrediente.java</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/receitaMb.java</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/conf/persistence.xml</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/Receita.java</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/web/index.xhtml</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/aplicacao/IngredienteControlador.java</file>
         </group>
     </open-files>
 </project-private>

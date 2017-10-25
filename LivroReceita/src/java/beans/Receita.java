@@ -15,13 +15,17 @@ import javax.persistence.Table;
 public class Receita implements Serializable{
     @Id
     @Column(name="COD_RECEITA")
-    private Integer codigo;
+    private Integer codigo = 0;
     private String nome;
     private String modoPreparo;
     private String observacoes;
     private String tipo;
     @OneToMany(fetch = FetchType.LAZY,mappedBy ="Receita",orphanRemoval = true,cascade = CascadeType.ALL)
     ArrayList<String> ingredientes = new ArrayList<>();
+    
+    public Receita(){
+        
+    }
     
     public Integer getCodigo() {
         return codigo;

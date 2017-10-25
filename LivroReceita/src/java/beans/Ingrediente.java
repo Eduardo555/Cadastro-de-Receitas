@@ -14,12 +14,16 @@ import javax.persistence.Table;
 public class Ingrediente implements Serializable {
     @Id
     @Column(name = "COD_INGREDIENTES")
-    private Integer codIngrediente;
+    private Integer codIngrediente = 0;
     private String Descricao;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "COD_RECEITA")
     private Receita receita;
+    
+    public Ingrediente(){
+        
+    }
     
     public Integer getCodIngrediente() {
         return codIngrediente;

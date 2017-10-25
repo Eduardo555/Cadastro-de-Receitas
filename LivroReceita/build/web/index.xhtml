@@ -32,7 +32,7 @@
         </style>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form id="form1">
         <div clas="container">
                 <div class="row">
                     <div class="col-sm-12 col-xs-12">
@@ -98,13 +98,13 @@
                   <div class="container">
                     <div class="row">
                       <label>Nome / Descrição</label>
-                      <h:inputTextarea id="txtDescricaoIngrediente" class="form-control" rows="5"/>
+                      <h:inputTextarea id="txtDescricaoIngrediente" class="form-control" rows="5" value="#{receitaMb.ingrediente.descricao}" />
                     </div>
                   </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success">Salvar Ingrediente</button>
+                <h:commandButton class="btn btn-success" value="Salvar Ingredientes" action="#{receitaMb.salvarIngrediente()}"/>
               </div>
             </div>
           </div>

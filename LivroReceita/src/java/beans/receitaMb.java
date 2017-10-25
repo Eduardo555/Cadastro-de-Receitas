@@ -11,6 +11,9 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class receitaMb {
 
+    Receita receita = new Receita(); 
+    Ingrediente ingrediente = new Ingrediente();
+    
     public Receita getReceita() {
         return receita;
     }
@@ -27,10 +30,8 @@ public class receitaMb {
         this.ingrediente = ingrediente;
     }
     
-    Receita receita; 
-    Ingrediente ingrediente;
-    
     public receitaMb() {
+        
     }
     /* Ingredientes */
     public void novoIngrediente(){

@@ -9,7 +9,13 @@
       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="eclipselink.logging.level" value="FINE"/>
+      
+      <property name="current_session_context_class">thread</property>
+      <property name="hibernate.hbm2ddl.auto">update</property>
+      
+       <mapping class="beans.Ingrediente"/>
+       <mapping class="beans.Receita"/>
+      
     </properties>
   </persistence-unit>
 </persistence>

@@ -50,9 +50,9 @@
                     </div>
                     <div class="col-sm-6 col-xs-12">
                         <label>Tipo</label>
-                        <h:selectOneMenu class="form-control" value="#{receitaMb.receita.ingredientes}">
-                            <f:selectItem itemValue="1" itemLabel="Doce"/>
-                            <f:selectItem itemValue="2" itemLabel="Salgado"/>
+                        <h:selectOneMenu class="form-control" id="cbxTipoReceita" value="#{receitaMb.receita.tipo}">
+                            <f:selectItem itemValue="doce"></f:selectItem>
+                            <f:selectItem itemValue="salgado"></f:selectItem>
                         </h:selectOneMenu>
                     </div>
                 </div>
@@ -78,8 +78,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <hr/>
-                        <h:commandButton id="btnVoltarListaReceitas" class="btn btn-primary" value="Voltar Listagem" />
-                        <h:commandButton id="btnAdicionarReceita" class="btn btn-success" value="Salvar Receita" />
+                        <h:commandButton id="btnVoltarListaReceitas" class="btn btn-primary" value="Voltar Listagem" action="/listaReceitas.xhtml"/>
+                        <h:commandButton id="btnAdicionarReceita" class="btn btn-success" value="Salvar Receita" action="#{receitaMb.salvarReceita()}"/>
                     </div>
                 </div>
         </div>

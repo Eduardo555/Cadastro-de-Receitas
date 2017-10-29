@@ -2,6 +2,7 @@ package beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,18 +15,17 @@ import javax.persistence.Table;
 @Table(name="RECEITAS")
 public class Receita implements Serializable{
     @Id
-    @Column(name="COD_RECEITA")
-    private Integer codigo = 0;
+    @Column(name="cod_receita")
+    private Integer codigo;
     private String nome;
     private String modoPreparo;
     private String observacoes;
     private String tipo;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy ="Receita",orphanRemoval = true,cascade = CascadeType.ALL)
-    ArrayList<String> ingredientes = new ArrayList<>();
-    
-    public Receita(){
-        
-    }
+    @OneToMany(fetch = FetchType.LAZY,
+            mappedBy ="receita",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
+    private List<Ingrediente> ingredientes = new ArrayList<Ingrediente>();
     
     public Integer getCodigo() {
         return codigo;
@@ -67,11 +67,15 @@ public class Receita implements Serializable{
         this.tipo = tipo;
     }
 
-    public ArrayList<String> getIngredientes() {
+    public List<Ingrediente> getIngredientes() {
         return ingredientes;
     }
 
-    public void setIngredientes(ArrayList<String> ingredientes) {
+    public void setIngredientes(List<Ingrediente> ingredientes) {
         this.ingredientes = ingredientes;
     }
+    
+    
+    
+    
 }

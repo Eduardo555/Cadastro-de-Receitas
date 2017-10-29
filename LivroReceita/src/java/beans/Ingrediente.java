@@ -13,24 +13,20 @@ import javax.persistence.Table;
 @Table(name = "INGREDIENTES")
 public class Ingrediente implements Serializable {
     @Id
-    @Column(name = "COD_INGREDIENTES")
-    private Integer codIngrediente = 0;
+    @Column(name = "cod_ingrediente")
+    private Integer cod_ingrediente;
     private String Descricao;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "COD_RECEITA")
+    @JoinColumn(name = "cod_receita")
     private Receita receita;
-    
-    public Ingrediente(){
-        
-    }
-    
+
     public Integer getCodIngrediente() {
-        return codIngrediente;
+        return cod_ingrediente;
     }
 
     public void setCodIngrediente(Integer codIngrediente) {
-        this.codIngrediente = codIngrediente;
+        this.cod_ingrediente = codIngrediente;
     }
 
     public String getDescricao() {
@@ -39,6 +35,14 @@ public class Ingrediente implements Serializable {
 
     public void setDescricao(String Descricao) {
         this.Descricao = Descricao;
+    }
+
+    public Receita getReceita() {
+        return receita;
+    }
+
+    public void setReceita(Receita receita) {
+        this.receita = receita;
     }
     
 }

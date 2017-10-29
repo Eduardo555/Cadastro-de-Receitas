@@ -5,10 +5,10 @@
         <group>
             <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/Ingrediente.java</file>
             <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/receitaMb.java</file>
-            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/conf/persistence.xml</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/aplicacao/ReceitaControlador.java</file>
             <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/beans/Receita.java</file>
             <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/web/index.xhtml</file>
-            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/src/java/aplicacao/IngredienteControlador.java</file>
+            <file>file:/home/eduardo/Documentos/Programação/Projeto%20-%20JPW-Git/Cadastro-de-Receitas/LivroReceita/web/listaReceitas.xhtml</file>
         </group>
     </open-files>
 </project-private>

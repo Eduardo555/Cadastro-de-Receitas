@@ -44,5 +44,13 @@ public class Ingrediente implements Serializable {
     public void setReceita(Receita receita) {
         this.receita = receita;
     }
+
+    public Integer getCod_ingrediente() {
+        return cod_ingrediente;
+    }
+
+    public void setCod_ingrediente(Integer cod_ingrediente) {
+        this.cod_ingrediente = cod_ingrediente;
+    }
     
 }

@@ -3,14 +3,22 @@ package beans;
 
 import aplicacao.IngredienteControlador;
 import aplicacao.ReceitaControlador;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.xml.ws.soap.AddressingFeature;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class receitaMb {
 
     public List<Receita> receitas;
@@ -65,6 +73,7 @@ public class receitaMb {
     public void salvarReceita(){
         ReceitaControlador.salvar(receita);
         this.novoReceita();
+        carregarLista();
     }
     
     public void excluirReceita(Receita receita){
@@ -76,10 +85,35 @@ public class receitaMb {
         receitas = ReceitaControlador.getPedidos();
     }
     
+    public void novaReceitaRedirect(){
+        novoReceita();
+        try 
+        {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+        } 
+        catch (IOException ex) 
+        {
+            Logger.getLogger(receitaMb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
-    
-    
-    
-    
-    
+    //colocamos dados em sessao para editar
+    public void editarReceita(Receita receita){
+        
+        try 
+        {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpServletRequest request = (HttpServletRequest) facesContext.getCurrentInstance().getExternalContext().getRequest();
+            HttpSession session = request.getSession();
+            session.setAttribute("receita", receita);
+            
+            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+            
+            setReceita(receita);
+        } 
+        catch (IOException ex) 
+        {
+            Logger.getLogger(receitaMb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }  
 }
